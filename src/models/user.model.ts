@@ -31,6 +31,21 @@ export class User extends Entity {
   })
   lastName?: string;
 
+  @property({
+    type: 'string',
+  })
+  identificationType?: string;
+
+  @property({
+    type: 'number',
+  })
+  identificationNumber?: number;
+
+  @property({
+    type: 'string',
+  })
+  cellphone: string;
+
   // Define well-known properties here
 
   // Indexer property to allow additional data
