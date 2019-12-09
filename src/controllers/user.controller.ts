@@ -173,15 +173,4 @@ export class UserController {
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.userRepository.deleteById(id);
   }
-
-  // @get('/user/authenticate', {
-  //   responses: {
-  //     '200': {
-  //       description: 'Authenticate with OKTA',
-  //     },
-  //   },
-  // })
-  // async authenticate(): Promise<void> {
-  //   await null;
-  // }
 }

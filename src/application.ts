@@ -9,11 +9,14 @@ import {RestApplication} from '@loopback/rest';
 import {ServiceMixin} from '@loopback/service-proxy';
 import * as path from 'path';
 import {MySequence} from './sequence';
+import * as dotEnv from 'dotenv';
 
 export class LkAgendaUserApiApplication extends BootMixin(
   ServiceMixin(RepositoryMixin(RestApplication)),
 ) {
   constructor(options: ApplicationConfig = {}) {
+    dotEnv.config();
+
     super(options);
 
     // Set up the custom sequence
