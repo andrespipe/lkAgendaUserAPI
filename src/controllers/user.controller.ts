@@ -173,4 +173,17 @@ export class UserController {
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.userRepository.deleteById(id);
   }
+
+  @get('/users/hello', {
+    responses: {
+      '200': {
+        description: 'Hello success',
+      },
+    },
+  })
+  async hello(): Promise<string> {
+    return new Promise(res => {
+      res('Hello from users');
+    });
+  }
 }
